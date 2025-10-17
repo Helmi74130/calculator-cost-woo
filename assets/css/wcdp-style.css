@@ -1,0 +1,25 @@
+.wcdp-dimensions {
+    border: 1px solid #eee;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #fafafa;
+}
+
+.wcdp-field {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.wcdp-field label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.wcdp-input {
+    width: 90px;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
