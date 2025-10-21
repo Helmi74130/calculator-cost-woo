@@ -28,11 +28,10 @@ class WCDP_Frontend
 
       // Si produit variable, récupérer les infos de stock pour chaque variation
       if ($product->is_type('variable')) {
-        $available_variations = $product->get_available_variations();
-        foreach ($available_variations as $variation_data) {
-          $variation_id = $variation_data['variation_id'];
+        $variation_ids = $product->get_children();
+        foreach ($variation_ids as $variation_id) {
           $variation = wc_get_product($variation_id);
-          if ($variation) {
+          if ($variation && $variation->is_type('variation')) {
             $variations_stock[$variation_id] = [
               'is_in_stock' => $variation->is_in_stock(),
               'backorders_allowed' => $variation->backorders_allowed(),
