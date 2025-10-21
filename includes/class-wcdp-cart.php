@@ -53,8 +53,8 @@ class WCDP_Cart
       if (isset($cart_item['wcdp_calculated_price']) && $cart_item['wcdp_calculated_price'] > 0) {
         $prix_ht = floatval($cart_item['wcdp_calculated_price']);
       } elseif (isset($cart_item['wcdp_dimensions'])) {
-        // Sinon, on le recalcule côté serveur
-        $result = wcdp_calculate_price($base_price, $cart_item['wcdp_dimensions']);
+        // Sinon, on le recalcule côté serveur avec les infos de stock
+        $result = wcdp_calculate_price($base_price, $cart_item['wcdp_dimensions'], $product);
         $prix_ht = $result['ht'];
       } else {
         continue;
